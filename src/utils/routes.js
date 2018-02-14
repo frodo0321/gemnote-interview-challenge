@@ -66,13 +66,10 @@ function addFields(fileList) {
 
 module.exports = function(app, dir, apiPath) {
 
-    console.log("ROUTES MIDDLEWARE", dir);
     const fileList = fileListFromTree(dirTree(path.join(__dirname, routesPath)));
-    console.log("filtes list", fileList);
     addFields(fileList);
 
     fileList.forEach(function(file) {
-        console.log("FOREACH FILE", file, apiPath + file.route);
         const route = require(file.relative)(app, path.join(apiPath + file.route));
     });
 

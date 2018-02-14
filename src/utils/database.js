@@ -9,7 +9,6 @@ function toTitleCase(str) {
     return str.split(".")[0].replace(/(^|-)(\w)/g, (all, $1, $2) => $2.toUpperCase());
 }
 
-console.log("INSIDE DB");
 mongoose.Promise = bluebird.Promise;
 mongoose.set("debug", true);
 
@@ -61,20 +60,15 @@ db.on("reconnected", () => {
 });
 
 
-//db.once("open", function() {
-//    console.log("WERE OPENNNN!!!");
 
-    const modelsPath = path.resolve(path.join(__dirname, "../models"));
-    console.log("MODELS PATH", modelsPath);
+const modelsPath = path.resolve(path.join(__dirname, "../models"));
 
-    fs.readdirSync(modelsPath).forEach(file => {
+fs.readdirSync(modelsPath).forEach(file => {
 
-        console.log("DB FOREACH FILE", file);
-        const dbModelName = toTitleCase(file);
-        const schemaPath = path.join(modelsPath, file);
-        db.model(dbModelName, require(schemaPath));
-    });
-//})
+    const dbModelName = toTitleCase(file);
+    const schemaPath = path.join(modelsPath, file);
+    db.model(dbModelName, require(schemaPath));
+});
 
 
 module.exports.connection = db;
