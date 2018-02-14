@@ -37,8 +37,10 @@ MongoDB server version: 3.4.4
 
 ### clone from github ###
 
-`git clone git@github.com:frodo0321/gemnote-interview-challenge.git`
-`cd gemnote-interview-challenge`
+```
+git clone git@github.com:frodo0321/gemnote-interview-challenge.git
+cd gemnote-interview-challenge
+```
 
 ### install dependencies ###
 
