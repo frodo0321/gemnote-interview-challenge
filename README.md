@@ -50,11 +50,15 @@ cd gemnote-interview-challenge
 
 `npm run load-test-data`
 
+![example](https://raw.githubusercontent.com/frodo0321/gemnote-interview-challenge/master/test/images/Screenshot%20from%202018-02-13%2017-30-49.png)
+
+
+
 run server
 
 `npm run start`
 
-
+![example](https://raw.githubusercontent.com/frodo0321/gemnote-interview-challenge/master/test/images/Screenshot%20from%202018-02-13%2017-31-32.png)
 
 
 ### test server ###
@@ -62,3 +66,5 @@ run server
 `curl localhost:8081/products`
 
 should output product json
+
+![example](https://raw.githubusercontent.com/frodo0321/gemnote-interview-challenge/master/test/images/Screenshot%20from%202018-02-13%2017-32-57.png)
